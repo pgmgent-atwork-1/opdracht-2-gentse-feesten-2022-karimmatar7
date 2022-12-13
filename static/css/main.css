@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Stolzl Display Bold';
+    src: url('../fonts/Stolzl\ Display\ Bold.woff Display Bold.woff2') format('woff2'),
+        url('../fonts/Stolzl\ Display\ Bold.woff') format('woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Stolzl Bold';
+    src: url('../fonts/Stolzl\ Bold.woff2') format('woff2'),
+        url('../fonts/Stolzl\ Bold.woff') format('woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Stolzl Medium';
+    src: url('../fonts/Stolzl\ Medium.woff2') format('woff2'),
+        url('../fonts/Stolzl\ Medium.woff') format('woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Stolzl';
+    src: url('../fonts/Stolzl-Regular.woff2') format('woff2'),
+        url('../fonts/Stolzl-Regular.woff') format('woff');
+    font-weight: 400;
+}
+
+:root {
+    --red-basic: hsl(0, 79%, 57%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+}
