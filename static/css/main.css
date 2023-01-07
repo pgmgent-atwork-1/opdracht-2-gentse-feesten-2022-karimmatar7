@@ -1,33 +1,1137 @@
 @font-face {
-    font-family: 'Stolzl Display Bold';
-    src: url('../fonts/Stolzl\ Display\ Bold.woff Display Bold.woff2') format('woff2'),
-        url('../fonts/Stolzl\ Display\ Bold.woff') format('woff');
-    font-weight: 700;
+  font-family: "Stolzl Display Bold";
+  src: url("../fonts/Stolzl\ Display\ Bold.woff Display Bold.woff2") format("woff2"),
+    url("../fonts/Stolzl\ Display\ Bold.woff") format("woff");
+  font-weight: 700;
 }
 
 @font-face {
-    font-family: 'Stolzl Bold';
-    src: url('../fonts/Stolzl\ Bold.woff2') format('woff2'),
-        url('../fonts/Stolzl\ Bold.woff') format('woff');
-    font-weight: 700;
+  font-family: "Stolzl Bold";
+  src: url("../fonts/Stolzl\ Bold.woff2") format("woff2"),
+    url("../fonts/Stolzl\ Bold.woff") format("woff");
+  font-weight: 700;
 }
 
 @font-face {
-    font-family: 'Stolzl Medium';
-    src: url('../fonts/Stolzl\ Medium.woff2') format('woff2'),
-        url('../fonts/Stolzl\ Medium.woff') format('woff');
-    font-weight: 500;
+  font-family: "Stolzl Medium";
+  src: url("../fonts/Stolzl\ Medium.woff2") format("woff2"),
+    url("../fonts/Stolzl\ Medium.woff") format("woff");
+  font-weight: 500;
 }
 
 @font-face {
-    font-family: 'Stolzl';
-    src: url('../fonts/Stolzl-Regular.woff2') format('woff2'),
-        url('../fonts/Stolzl-Regular.woff') format('woff');
-    font-weight: 400;
+  font-family: "Stolzl";
+  src: url("../fonts/Stolzl-Regular.woff2") format("woff2"),
+    url("../fonts/Stolzl-Regular.woff") format("woff");
+  font-weight: 400;
 }
 
 :root {
-    --red-basic: hsl(0, 79%, 57%);
-    --black: hsl(0, 0%, 0%);
-    --white: hsl(0, 0%, 100%);
+  --red-basic: hsl(0, 79%, 57%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--black);
+  color: white;
+}
+
+.logo-main {
+  width: 100%;
+  padding: 2.5rem 0rem 0rem 4rem;
+}
+
+.title-black {
+  color: var(--white);
+}
+
+.synopsis {
+  color: var(--white);
+}
+
+.first-container {
+  display: flex;
+  font-family: "Stolzl Medium";
+  background-image: url(../img/images/hero-desktop.jpg);
+}
+
+.hour {
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: black;
+  position: relative;
+  top: 4rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.5rem;
+  left: 1rem;
+}
+
+.title {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.location {
+  color: hsl(0deg 0% 0%);
+  background: #e83c3c;
+  width: 11rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.start {
+  color: var(--white);
+}
+
+.container-nav {
+  display: flex;
+  gap: 7rem;
+}
+
+.container-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: end;
+  position: relative;
+  padding: 2rem;
+  left: 17rem;
+  align-items: center;
+  background: #e83c3c;
+  width: 25rem;
+  margin-right: 4rem;
+}
+
+.container-right a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.container-first-three {
+  display: flex;
+  gap: 7rem;
+  align-items: center;
+  padding-left: 9.5rem;
+}
+
+.magnifier {
+  transition: all;
+}
+
+.magnifier:hover {
+  filter: invert(100);
+}
+
+.container-logo {
+  width: 18rem;
+}
+
+.hamburger {
+  cursor: pointer;
+  transition: all;
+  width: 3rem;
+}
+
+.hamburger:hover {
+  filter: invert(100);
+}
+
+.hovering {
+  border: 2px solid white;
+  width: 24rem;
+  padding: 2rem;
+  background: black;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 23rem;
+}
+
+.containerin a:hover .hovering {
+  margin-top: -3rem;
+  margin-left: 3rem;
+  box-shadow: -10px 10px 0px 10px #e83c3c;
+}
+
+.rebirth {
+  background-color: var(--black);
+  color: white;
+  font-family: "Stolzl Display Bold";
+  text-transform: capitalize;
+  font-size: 5rem;
+  position: absolute;
+  top: 10rem;
+  padding: 1rem;
+  width: 52rem;
+}
+
+.red {
+  position: absolute;
+  background-color: #e83c3c;
+  height: 234px;
+  top: 8rem;
+  width: 24rem;
+  left: 0.12rem;
+}
+
+.containerin li {
+  list-style: none;
+  scroll-snap-align: start;
+}
+
+.containerin {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding-top: 13rem;
+  font-family: "Stolzl Medium";
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.images-events {
+  width: 30rem;
+}
+
+.images-events img {
+  width: 100%;
+  border: 2px solid white;
+}
+
+.before-first {
+  max-width: 1200px;
+  background-image: url(../img/images/hero-desktop.jpg);
+  height: 71rem;
+  background-repeat: no-repeat;
+}
+
+
+.link-to-news {
+  background-color: black;
+  padding: 1.5rem;
+  color: white;
+  border: 1px solid white;
+  position: relative;
+  left: 23rem;
+  top: -5rem;
+  transition: all ease 0.5s;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: 'Stolzl Medium';
+}
+
+.link-to-news:hover {
+  background-color: white;
+  color: black;
+}
+
+.link-to-news a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: "Stolzl Medium";
+  transition: all ease;
+}
+
+.slicenews {
+  display: flex;
+  position: relative;
+  left: 23rem;
+  top: -8rem;
+  flex-wrap: wrap;
+  width: 50rem;
+  border: 1px solid white;
+}
+
+.news-title {
+  color: white;
+  font-size: 11rem;
+  font-family: "Stolzl Medium";
+  transform: rotate(270deg);
+  position: relative;
+  left: -43rem;
+  top: -13rem;
+}
+
+.list-first {
+  max-width: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  left: 45rem;
+  top: 20rem;
+}
+
+.list-first li {
+  list-style: none;
+  flex: 1 1 33.33%;
+}
+
+.list-first a {
+  display: flex;
+  flex-direction: column;
+  background: hsl(0, 79%, 57%);
+  color: black;
+  width: 100%;
+  text-decoration: none;
+  font-family: "Stolzl Display Bold";
+  font-size: 1.5rem;
+  border: 1px solid;
+  padding: 1rem;
+  text-align: center;
+}
+
+.list-first span {
+  font-family: "Stolzl";
+  font-size: 1rem;
+  text-align: center;
+}
+
+.list-first a:hover {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.list-first li:nth-of-type(2) {
+  flex: 66.66%;
+}
+
+.list-first li:nth-of-type(2) a {
+  width: calc(50%);
+}
+
+.list-first li:nth-of-type(9) {
+  flex: 66.66%;
+}
+
+
+.list-first li:nth-of-type(9) a {
+  width: calc(50%);
+  float: right;
+}
+
+.container-first-three a {
+  text-decoration: none;
+  color: white;
+  transition: all ease;
+}
+
+.logotwo {
+  width: 15rem;
+}
+
+.displayer {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #e83c3c;
+  background-image: url(../img/images/hero-desktop.jpg);
+}
+
+.closer {
+  cursor: pointer;
+  filter: invert(100);
+  padding-left: 2rem;
+}
+
+
+.right {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+}
+
+.twoicons {
+  display: flex;
+}
+
+.magnifier-two {
+  padding-left: 2rem;
+  filter: invert(100);
+}
+
+.left {
+  background-color: #e83c3c;
+  width: 60%;
+  height: 86rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Stolzl Medium";
+}
+
+.left a {
+  color: black;
+  text-decoration: none;
+  padding-left: 4rem;
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  line-height: 4rem;
+}
+
+.left a:hover {
+  color: white;
+}
+
+.allcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow::after {
+  content: "\2192";
+  color: black;
+  margin-left: 8px;
+  font-size: 5rem;
+  vertical-align: middle;
+}
+
+.arrow:after:hover {
+  color: white;
+}
+
+.program {
+  display: flex;
+}
+
+.left a:hover .arrow:after {
+  color: white;
+}
+
+.days {
+  font-family: "Stolzl Medium";
+  position: absolute;
+  left: 17rem;
+  top: 19rem;
+}
+
+.days li {
+  list-style: none;
+  padding-top: 2rem;
+}
+
+.arrow {
+  font-size: 2.5rem;
+  line-height: 4rem;
+  display: inline-block;
+}
+
+.today {
+  line-height: 1.5rem;
+  position: absolute;
+  left: 75rem;
+  top: 25rem;
+}
+
+.today a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Stolzl Medium';
+  font-size: 2rem;
+}
+
+.today span {
+  font-size: 1.5rem;
+}
+
+.images-events img:nth-child(2) {}
+
+.images-events img:nth-child(4) {}
+
+.news-index {
+  transition: all ease 0.5s;
+}
+
+.news-index:hover {
+  background-color: #e83c3c;
+  color: black;
+}
+
+.news-index:first-child {
+  grid-area: first;
+  height: 17rem;
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  width: 25rem;
+  font-size: 2rem;
+  font-family: 'Stolzl Bold';
+  transition: all ease 0.5s;
+}
+
+.news-index:first-child:hover {
+  color: black;
+}
+
+.news-index:nth-child(2) {
+  grid-area: second;
+  color: white;
+  width: 24.86rem;
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: 'Stolzl Bold';
+  padding: 1rem;
+  transition: all ease 0.5s;
+}
+
+.news-index:nth-child(2):hover {
+  color: black;
+}
+
+.news-index:last-child {
+  grid-area: last;
+  height: 17rem;
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  width: 50rem;
+  font-size: 2rem;
+  font-family: 'Stolzl Bold';
+  transition: all ease 0.5s;
+}
+
+.news-index:last-child:hover {
+  color: black;
+}
+
+.news-index {
+  border: 1px solid white;
+}
+
+.spot {
+  background-color: #e83c3c;
+  font-family: 'Stolzl Display Bold';
+  width: 31rem;
+  text-transform: capitalize;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-left: 6rem;
+  margin-bottom: 2rem;
+}
+
+.vid {
+  background-color: #e83c3c;
+  font-family: 'Stolzl Display Bold';
+  width: 43rem;
+  text-transform: capitalize;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-left: 6rem;
+}
+
+.container-footer {
+  background-image: url(../img/images/rope.png);
+  background-repeat: no-repeat;
+  background-position-x: 66rem;
+  background-position-y: -5rem;
+  margin-top: 4rem;
+}
+
+footer {}
+
+.sub {
+  background-color: #e83c3c;
+  font-family: "Stolzl Bold";
+  text-transform: uppercase;
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.sub:hover {
+  background-color: white;
+}
+
+.typ {
+  background-color: black;
+  border-bottom: 1px solid white;
+  padding: 1rem;
+  width: 20rem;
+  font-size: 1.5rem;
+}
+
+.typ::placeholder {
+  color: white;
+  font-family: 'Stolzl';
+}
+
+.intouch {}
+
+.intouch h3 {
+  color: white;
+  font-family: 'Stolzl Display Bold';
+  font-size: 3rem;
+  padding-left: 6rem;
+  padding-top: 4rem;
+}
+
+.intouch h4 {
+  color: white;
+  font-family: 'Stolzl';
+  font-size: 1.3rem;
+  padding-left: 6rem;
+}
+
+.confirm {
+  padding-left: 6rem;
+  padding-top: 3rem;
+}
+
+.privacy {
+  color: #b3b3b3;
+  font-family: 'Stolzl';
+  padding-left: 6rem;
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+
+.privacy a {
+  color: white;
+}
+
+.second-container {
+  background-image: url(../img/images/hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position-x: 32rem;
+  height: 39rem;
+  background-size: 93rem;
+  background-position-y: -12rem;
+}
+
+.websites {
+  list-style: none;
+  display: flex;
+}
+
+.websites li {}
+
+.websites a {}
+
+.websites img {
+  width: 5rem;
+  transition: all;
+  filter: invert(100);
+  background-color: white;
+  border-radius: 45px;
+  margin-left: 2rem;
+}
+
+.websites img:hover {
+  filter: invert(0);
+}
+
+.line {
+  width: 58rem;
+  background-color: black;
+  height: 4px;
+  vertical-align: middle;
+  margin-left: 2rem;
+}
+
+.container-second-elements {
+  display: flex;
+  align-items: center;
+}
+
+.container-second-elements p {
+  font-family: 'Stolzl Bold';
+  font-size: 1.7rem;
+  padding-left: 7rem;
+  color: black;
+}
+
+.companies li {
+  list-style: none;
+}
+
+.red-foot {
+  background-color: #e83c3c;
+}
+
+.description {
+  color: #b3b3b3;
+  font-family: 'Stolzl';
+}
+
+.companies {
+  display: flex;
+}
+
+.first-two {}
+
+.first-two a {}
+
+.container-elements {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  padding-top: 8rem;
+}
+
+.gent {
+  width: 17rem;
+}
+
+.date {
+  margin-left: -5rem;
+}
+
+.container-third {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+}
+
+.container-third p {
+  font-family: 'Stolzl Display Bold';
+  font-size: 5rem;
+  padding-left: 2rem;
+  color: black;
+}
+
+.avs {
+  width: 12rem;
+}
+
+.piano {
+  width: 5rem;
+  margin-left: 2rem;
+}
+
+.stad {
+  width: 6rem;
+  margin-left: 2rem;
+}
+
+.last-container {
+  background-color: black;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.last-container a {
+  color: #b3b3b3;
+  font-family: 'Stolzl Medium';
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+.spot a {
+  color: black;
+  text-decoration: none;
+}
+
+.vid a {
+  color: black;
+  text-decoration: none;
+}
+
+.container-news {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.title-black {
+  grid-area: title;
+  font-family: 'Stolzl';
+  padding: 1rem;
+}
+
+.images-news {}
+
+.first-container-news {
+  display: flex;
+  font-family: "Stolzl Medium";
+  margin-bottom: 13rem;
+}
+
+.container {}
+
+.container-news li {
+  width: 78rem;
+  list-style: none;
+}
+
+.red-news {
+  position: absolute;
+  background-color: #e83c3c;
+  height: 234px;
+  top: 8rem;
+  width: 24rem;
+  left: 1.0rem;
+}
+
+.container-news a {
+  display: flex;
+  border: 2px solid white;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: all ease 1s;
+}
+
+.container-news a:hover h1 {
+  background-color: #e83c3c;
+  color: black;
+  height: 8rem;
+}
+
+.containerin a {
+  text-decoration: none;
+}
+
+.flexer-start {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexer-slice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexer-slice img {
+  width: 31rem;
+  object-fit: cover;
+  position: relative;
+  left: -1.5rem;
+  top: -8rem;
+}
+
+.practical {
+  background-color: var(--black);
+  color: white;
+  font-family: "Stolzl Display Bold";
+  text-transform: capitalize;
+  font-size: 5rem;
+  position: absolute;
+  top: 10rem;
+  padding: 1rem;
+  width: 60rem;
+}
+
+.program-search {
+  background-color: var(--black);
+  color: white;
+  font-family: "Stolzl Display Bold";
+  text-transform: capitalize;
+  font-size: 5rem;
+  position: absolute;
+  top: 10rem;
+  padding: 1rem;
+  width: 65rem;
+}
+
+.list-second {
+  max-width: 30rem;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  left: 36.6rem;
+  top: -11rem;
+}
+
+.list-second li {
+  list-style: none;
+  flex: 1 1 33.33%;
+  /* margin-left: 1.5rem; */
+}
+
+.list-second a {
+  display: flex;
+  flex-direction: column;
+  background: hsl(0, 79%, 57%);
+  color: black;
+  width: 6rem;
+  text-decoration: none;
+  font-family: "Stolzl Display Bold";
+  font-size: 1.5rem;
+  border: 1px solid;
+  padding: 1rem;
+  text-align: center;
+}
+
+.list-second span {
+  font-family: "Stolzl";
+  font-size: 1rem;
+  text-align: center;
+}
+
+.list-second a:hover {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.list-second li:nth-of-type(7) a {
+  background-color: black;
+  color: white;
+  border: black 1px solid;
+  border-right: 1px solid white;
+}
+
+.list-second li:nth-of-type(8) a {
+  background-color: black;
+  color: white;
+  border: black 1px solid;
+  border-right: 1px solid white;
+}
+
+.list-second li:nth-of-type(9) a {
+  background-color: black;
+  color: white;
+  border: black 1px solid;
+  border-right: 1px solid white;
+}
+
+
+.list-second li:nth-of-type(10) a {
+  background-color: black;
+  color: white;
+  border: black 1px solid;
+}
+
+.list-second li:nth-of-type(7) a:hover {
+  background-color: #e83c3c;
+  color: black;
+  border: #e83c3c solid 1px;
+}
+
+.list-second li:nth-of-type(8) a:hover {
+  background-color: #e83c3c;
+  color: black;
+  border: #e83c3c solid 1px;
+}
+
+.list-second li:nth-of-type(9) a:hover {
+  background-color: #e83c3c;
+  color: black;
+  border: #e83c3c solid 1px;
+}
+
+
+.list-second li:nth-of-type(10) a:hover {
+  background-color: #e83c3c;
+  color: black;
+  border: #e83c3c solid 1px;
+}
+
+.red-day {
+  position: absolute;
+  background-color: #e83c3c;
+  height: 234px;
+  top: 8rem;
+  width: 25rem;
+  left: 0rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.magnifier-search {
+  background: black;
+  cursor: pointer;
+  width: 4rem;
+  transition: all ease 0.5s;
+}
+
+.magnifier-search:hover {
+  background-color: #e83c3c;
+}
+
+.magnifier-search img {
+  filter: invert(1);
+  /* background-color: beige; */
+  transition: all ease 0.5s;
+}
+
+.magnifier-search img:hover {
+  background-color: #e83c3c;
+  filter: invert(0);
+}
+
+.search-bar {
+  border: 1px solid white;
+  width: 50rem;
+  display: flex;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  width: 47rem;
+  background: none;
+  border: none;
+  height: 4rem;
+  font-family: 'Stolzl Medium';
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: white;
+}
+
+.search-bar ::placeholder {
+  color: white;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  font-family: 'Stolzl';
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.results {
+  font-family: 'Stolzl';
+}
+
+.grid-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.grid-list li {}
+
+.hovering-two {
+  border: 2px solid white;
+  width: 24rem;
+  padding: 2rem;
+  background: black;
+  transition: all 0.5s ease;
+}
+
+.results a {
+  text-decoration: none;
+  color: white;
+}
+
+.results a:hover .hovering-two {
+  margin-top: -3rem;
+  margin-left: 3rem;
+  box-shadow: -10px 10px 0px 10px #e83c3c;
+}
+
+.logos-sort img {
+  filter: invert(100);
+}
+
+.logos-sort {
+  display: flex;
+  justify-content: end;
+  padding-right: 5rem;
+}
+
+.raster {
+  transition: ease;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.raster.active {
+  background-color: #e83c3c;
+  filter: invert(0);
+  border: 1px solid white;
+}
+
+.raster:hover img {
+  filter: invert(0);
+}
+
+.raster:hover {
+  background-color: #e83c3c;
+}
+
+.list {
+  margin-left: 0rem;
+  transition: all ease;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.list.active {
+  background-color: #e83c3c;
+  filter: invert(0);
+  border: 1px solid white;
+}
+
+.list:hover {
+  background-color: #e83c3c;
+}
+
+.list:hover img {
+  filter: invert(0);
+}
+
+.list-sort {
+  padding: 2rem;
+}
+
+.list-list a:hover {
+  background-color: white;  
+  box-shadow: inset 1rem 1rem 0rem black;
+  color: black;
+  transform: scaleY(1);
+}
+
+.location-list {
+  border: 1px solid white;
+  width: 17rem;
+  font-size: 1.2rem;
+  height: 5rem;
+  font-weight: 400;
+  padding: 1rem;
+  text-align: center;
+}
+
+.title-list {
+  border: 1px solid white;
+  height: 5rem;
+  width: 67rem;
+  padding: 1.3rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.hovering-two-list {
+  display: flex;
+}
+
+.container-date {
+  border: 1px solid white;
+  font-weight: 400;
+  font-size: 1.3rem;
+  padding: 1.5rem;
+  height: 5rem;
+  text-align: center;
+  width: 17rem;
+}
+
+.list-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.link-list {
+  display: flex;
+  transition: all ease 0.5s;
+  height: 5rem;
 }
