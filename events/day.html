@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day</title>
-    <link rel="stylesheet" href="../static/css/main.css">
     <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/main.css">
     <link rel="icon" type="image/x-icon" href="static/img/icons/favicon.png" />
 </head>
 
@@ -25,7 +25,7 @@
                 <div class="container-first-three">
                     <a href="../news.html">NIEUWS</a>
                     <a href="day.html">PROGRAMMA</a>
-                    <a href="detail.html">PRAKTISCH</a>
+                    <a href="">PRAKTISCH</a>
                 </div>
                 <div class="container-right">
                     <a href="#">HOE NAAR GF22?</a>
@@ -86,8 +86,24 @@
         </div>
     </header>
     <main>
-        <button id="show-location">Show location</button>
-        <button id="show-category">Show category</button>
+        <div class="container-filter">
+            <h1 class="filter-title">Filter</h1>
+            <div class="buttons">
+                <div class="container-buttons">
+                    <button class="location-btn"><img src="../static/img/icons/marker.svg" alt="">Feestpleinen</button>
+                    <button class="category-btn"><img src="../static/img/icons/category.svg" alt="">Categorie</button>
+                    <button class="time-btn"><img src="../static/img/icons/clock.svg" alt="">Tijd</button>
+                    <button class="kid-btn"><img src="../static/img/icons/balloon.svg" alt="">Kinderen</button>
+                    <form class="handi">
+                        <label class="paralyzed" for="paralyzed"><img src="../static/img/icons/wheelchair.svg"
+                                alt=""></label><input type="checkbox" id="paralyzed" value="paralyzed" />
+                        <label class="free" for="free">Gratis</label><input type="checkbox" id="free" value="free" />
+                    </form>
+                </div>
+                <div class="category" id="category"></div>
+            </div>
+        </div>
+        <div class="catego" id="catego"></div>
         <div id="information-day"></div>
     </main>
     <footer>
@@ -152,6 +168,7 @@
             </div>
         </div>
     </footer>
+    <script src="../static/js/menu.js"></script>
     <script src="../static/js/day.js"></script>
 </body>
 

@@ -1,23 +1,3 @@
-const hamburger = document.querySelector('.hamburger');
-const displayer = document.querySelector('.displayer');
-const closer = document.querySelector('.closer');
-
-hamburger.addEventListener('click', () => {
-    if (displayer.style.display === 'none') {
-        displayer.style.display = 'block';
-    } else {
-        displayer.style.display = 'none';
-    }
-});
-
-closer.addEventListener('click', () => {
-    if (displayer.style.display === 'block') {
-        displayer.style.display = 'none';
-    } else {
-        displayer.style.display = 'block';
-    }
-});
-
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form');
     const searchInput = document.getElementById('search');
@@ -39,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 filteredEvents.forEach(event => {
                     results += `
                 <li>
-                  <a href="">
+                  <a href="events/detail.html?day=${event.day}&slug=${event.slug}">
                     <span class="hour">${event.day_of_week.substring(0, 2)} ${event.day} juli</span>
                     <div class="images-events">
                       <img src="${event.image ? event.image.full : ""}" alt="">
@@ -71,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         filteredEvents.forEach(event => {
             results += `
               <li>
-                  <a href="">
+                  <a href="events/detail.html?day=${event.day}&slug=${event.slug}">
                   <span class="hour">${event.day_of_week.substring(0, 2)} ${event.day} juli</span>
                   <div class="images-events">
                       <img src="${event.image ? event.image.full : ""}" alt="">
@@ -98,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         filteredEvents.forEach(event => {
             results += `
                         <li class="list-list">
-                            <a href="" class="link-list">
+                            <a href="events/detail.html?day=${event.day}&slug=${event.slug}" class="link-list">
                             <div class="container-date">
                             <span class="hour-list">${event.day_of_week.substring(0, 2)} ${event.day} juli</span>
                             <span class="start-list">${event.start}u.</span></div>

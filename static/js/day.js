@@ -1,69 +1,70 @@
-const hamburger = document.querySelector('.hamburger');
-const displayer = document.querySelector('.displayer');
-const closer = document.querySelector('.closer');
+const $list = document.getElementById("information-day");
+const params = new URLSearchParams(location.search);
+const day = params.get('day');
 
-hamburger.addEventListener('click', () => {
-    if (displayer.style.display === 'none') {
-        displayer.style.display = 'block';
-    } else {
-        displayer.style.display = 'none';
+const fetchCat = async () => {
+    let response = await fetch(
+        "https://www.pgm.gent/data/gentsefeesten/categories.json"
+    );
+    return await response.json();
+};
+
+const fetchEvents = async () => {
+    let response = await fetch(
+        "https://www.pgm.gent/data/gentsefeesten/events_500.json"
+    );
+    return await response.json();
+};
+
+const fetchData = async () => {
+    try {
+        const categories = await fetchCat();
+        const events = await fetchEvents();
+
+        renderEvents(categories, events);
+    } catch (error) {
     }
-});
+};
 
-closer.addEventListener('click', () => {
-    if (displayer.style.display === 'block') {
-        displayer.style.display = 'none';
-    } else {
-        displayer.style.display = 'block';
-    }
-});
+fetchData();
 
-async function getData() {
-    const params = new URLSearchParams(location.search);
-    const day = params.get('day');
+const renderEvents = (categories, events) => {
+    const $category = document.getElementById('category');
+    $category.innerHTML = categories.map((rab) => {
+        return `<li class="cat-list"><a href="#${rab}"><img src="../static/img/icons/category.svg" alt="">
+        ${rab}</a></li>`
+    }).join("")
+    const html = categories
+        .map((category) => {
+            const filteredEvents = events.filter((event) => {
+                return event.day === day && event.category.includes(category);
+            });
 
-    const response = await fetch('https://www.pgm.gent/data/gentsefeesten/events.json');
-    const data = await response.json();
+            return `
+        <h2 class="title-cat" id="${category}">${category}</h2>
+        <ul class="filtered">
+          ${filteredEvents
+                    .map((event) => {
+                        return `
+                <li><a href="detail.html?day=${event.day}&slug=${event.slug}"
+                <span class="hour-cat">${event.day} juli</span>
+                <div class="images-events">
+                <img src="${event.image ? event.image.full : ""}" alt="">
+                </div>
+                <div class="hovering-cat">
+                <h2 class="title">${event.title}</h2>
+                <div class="flexer-start">
+                <p class="location">${event.location}</p>
+                <span class="start">${event.start}u.</span>
+                </div>
+                </div></a></li>
+              `;
+                    })
+                    .join("")}
+        </ul>
+      `;
+        })
+        .join("");
 
-    const filteredData = data.filter((event) => event.day === day);
-
-    const div = document.querySelector('#information-day');
-    div.innerHTML = '';
-    filteredData.forEach((event) => {
-        div.innerHTML += `<a href=""
-        <span class="hour">${event.day_of_week.substring(0, 2)} ${event.day} juli</span>
-        <div class="images-events">
-        <img src="${event.image ? event.image.full : ""}" alt="">
-        </div>
-        <div class="hovering">
-        <h2 class="title">${event.title}</h2>
-        <div class="flexer-start">
-        <p class="location">${event.location}</p>
-        <span class="start">${event.start}u.</span>
-        </div>
-        </div></a>`;
-    });
-}
-
-getData();
-
-const locationButton = document.querySelector('#show-location');
-const categoryButton = document.querySelector('#show-category');
-
-locationButton.addEventListener('click', () => {
-    const locations = document.querySelectorAll('.location');
-    locations.forEach((location) => {
-        location.classList.toggle('hidden');
-    });
-});
-
-categoryButton.addEventListener('click', () => {
-    const categories = document.querySelectorAll('.category');
-    categories.forEach((category) => {
-        category.classList.toggle('hidden');
-    });
-});
-
-
-
-
+    $list.innerHTML = html;
+};

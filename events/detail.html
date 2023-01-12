@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail</title>
-    <link rel="stylesheet" href="../static/css/main.css">
     <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/main.css">
     <link rel="icon" type="image/x-icon" href="static/img/icons/favicon.png" />
 </head>
 
@@ -25,18 +25,28 @@
                 <div class="container-first-three">
                     <a href="../news.html">NIEUWS</a>
                     <a href="day.html">PROGRAMMA</a>
-                    <a href="detail.html">PRAKTISCH</a>
+                    <a href="">PRAKTISCH</a>
                 </div>
                 <div class="container-right">
                     <a href="#">HOE NAAR GF22?</a>
                     <a href="../search.html"><img class="magnifier" src="../static/img/icons/search.svg"
                             alt="search-magnifier"></a>
                     <div class="hamburger"><img src="../static/img/icons/hamburger.svg" alt="more"></div>
-                    <div class="red-news"></div>
-                    <h1 class="practical">Praktische Informatie
-                    </h1>
+                    <div class="red-day"></div>
                 </div>
             </div>
+            <ul class="list-second">
+                <li><a href="day.html?day=15">Vr<br> <span>15 juli</span></a></li>
+                <li><a href="day.html?day=16">Za<br> <span>16 juli</span></a></li>
+                <li><a href="day.html?day=17">Zo<br> <span>17 juli</span></a></li>
+                <li><a href="day.html?day=18">Ma<br> <span>18 juli</span></a></li>
+                <li><a href="day.html?day=19">Di<br> <span>19 juli</span></a></li>
+                <li><a href="day.html?day=20">Wo<br> <span>20 juli</span></a></li>
+                <li><a href="day.html?day=21">Do<br> <span>21 juli</span></a></li>
+                <li><a href="day.html?day=22">Vr<br> <span>22 juli</span></a></li>
+                <li><a href="day.html?day=23">Za<br> <span>23 juli</span></a></li>
+                <li><a href="day.html?day=24">Zo<br> <span>24 juli</span></a></li>
+            </ul>
         </div>
         <div class="displayer" style="display: none;">
             <div class="allcontainer">
@@ -50,17 +60,17 @@
                         <a href="events/day.html">PROGRAMMA <div class="arrow"></div></a>
                     </div>
                     <ul class="days">
-                        <li><a href="day.html?day=15">Vrijdag 15 juli</a></li>
-                        <li><a href="day.html?day=16">Zaterdag 16 juli</a></li>
-                        <li><a href="day.html?day=17">Zondag 17 juli</a></li>
-                        <li><a href="day.html?day=18">Maandag 18 juli</a></li>
-                        <li><a href="day.html?day=19">Dinsdag 19 juli</a></li>
-                        <li><a href="day.html?day=20">Woensdag 20 juli</a></li>
-                        <li><a href="day.html?day=21">Donderdag 21 juli</a></li>
-                        <li><a href="day.html?day=22">Vrijdag 22 juli</a></li>
-                        <li><a href="day.html?day=23">Zaterdag 23 juli</a></li>
-                        <li><a href="day.html?day=24">Zondag 24 juli</a></li>
-                        <li><a href="day.html">Programma</a></li>
+                        <li><a href="">Vrijdag 15 juli</a></li>
+                        <li><a href="">Zaterdag 16 juli</a></li>
+                        <li><a href="">Zondag 17 juli</a></li>
+                        <li><a href="">Maandag 18 juli</a></li>
+                        <li><a href="">Dinsdag 19 juli</a></li>
+                        <li><a href="">Woensdag 20 juli</a></li>
+                        <li><a href="">Donderdag 21 juli</a></li>
+                        <li><a href="">Vrijdag 22 juli</a></li>
+                        <li><a href="">Zaterdag 23 juli</a></li>
+                        <li><a href="">Zondag 24 juli</a></li>
+                        <li><a href="">Programma</a></li>
                     </ul>
                     <a href="events/detail.html">PRAKTISCH</a>
                     <a href="#">HOE NAAR GF22?</a>
@@ -75,7 +85,13 @@
             </div>
         </div>
     </header>
-    <main></main>
+    <main>
+        <div id="details"></div>
+        <div class="details-location" id="details-location"></div>
+        <h1 class="org">Andere Evenementen Van Deze Organisator
+        </h1>
+        <div class="details-organizer" id="details-organizer"></div>
+    </main>
     <footer>
         <div class="container-footer">
             <div class="spot">
@@ -138,6 +154,7 @@
             </div>
         </div>
     </footer>
+    <script src="../static/js/menu.js"></script>
     <script src="../static/js/detail.js"></script>
 </body>
 

@@ -11,7 +11,7 @@ const fetchIndex = async () => {
 
 const renderIndex = (data) => {
     return data.slice(0, 8).map((dat) => {
-        return `<li><a href=""
+        return `<li><a href="events/detail.html?day=${dat.day}&slug=${dat.slug}"
         <span class="hour">${dat.day_of_week.substring(0, 2)} ${dat.day} juli</span>
         <div class="images-events">
         <img src="${dat.image ? dat.image.full : ""}" alt="">
@@ -32,16 +32,20 @@ const updateIndex = (data) => {
 
 fetchIndex();
 
+const NEWS = 'https://www.pgm.gent/data/gentsefeesten/news.json';
+
 const $newsSlice = document.getElementById('newsSlice');
 
 const fetchNews = async () => {
-    const news = await fetchNewsApi();
-    updateNewsList(news);
+    const response = await fetch(NEWS, { method: 'GET', });
+    const data = await response.json();
+
+    updateNewsList(data);
 };
 
 const renderNews = (data) => {
     return data.slice(0, 3).map((dat) => `
-    <a class="news-index" href="#">${dat.title}</a>`).join("");
+    <a class="news-index" href="">${dat.title}</a>`).join("");
 }
 
 const updateNewsList = (data) => {
@@ -49,23 +53,3 @@ const updateNewsList = (data) => {
 }
 
 fetchNews();
-
-const hamburger = document.querySelector('.hamburger');
-const displayer = document.querySelector('.displayer');
-const closer = document.querySelector('.closer');
-
-hamburger.addEventListener('click', () => {
-    if (displayer.style.display === 'none') {
-        displayer.style.display = 'block';
-    } else {
-        displayer.style.display = 'none';
-    }
-});
-
-closer.addEventListener('click', () => {
-    if (displayer.style.display === 'block') {
-        displayer.style.display = 'none';
-    } else {
-        displayer.style.display = 'block';
-    }
-});
