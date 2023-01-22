@@ -1,26 +1,26 @@
+(() =>{
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form');
-    const searchInput = document.getElementById('search');
-    const countElement = document.getElementById('count');
-    let filteredEvents;
-    let results;
+  const form = document.getElementById('form');
+  const searchInput = document.getElementById('search');
+  const countElement = document.getElementById('count');
+  let filteredEvents;
+  let results;
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const query = searchInput.value;
-        history.pushState({}, '', `?search=${query}`);
-        fetch('https://www.pgm.gent/data/gentsefeesten/events.json?search=' + query)
-            .then(response => response.json())
-            .then(data => {
-                filteredEvents = data.filter(event => event.title.toLowerCase().includes(query.toLowerCase()));
-                countElement.style.display = 'block';
-                countElement.innerHTML = `<strong>${filteredEvents.length} resultaten</strong> voor "${query}"`;
-                results = '<ul class="grid-list">';
-                filteredEvents.forEach(event => {
-                    results += `
+
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("search");
+  fetch('https://www.pgm.gent/data/gentsefeesten/events.json?search=' + query)
+    .then(response => response.json())
+    .then(data => {
+      filteredEvents = data.filter(event => event.title.toLowerCase().includes(query.toLowerCase()));
+      countElement.style.display = 'block';
+      countElement.innerHTML = `<strong>${filteredEvents.length} resultaten</strong> voor "${query}"`;
+      results = '<ul class="grid-list">';
+      filteredEvents.forEach(event => {
+        results += `
                 <li>
                   <a href="events/detail.html?day=${event.day}&slug=${event.slug}">
-                    <span class="hour">${event.day_of_week.substring(0, 2)} ${event.day} juli</span>
+                    <span class="hour-two">${event.day_of_week.substring(0, 2)} ${event.day} juli</span>
                     <div class="images-events">
                       <img src="${event.image ? event.image.full : ""}" alt="">
                     </div>
@@ -34,25 +34,22 @@ document.addEventListener('DOMContentLoaded', function () {
                   </a>
                 </li>
               `;
-                });
-                results += '</ul>';
-                updateResults();
-                const rasterDiv = document.querySelector('.raster');
-                rasterDiv.classList.add('active');
-            });
+      });
+      results += '</ul>';
+      updateResults(results);
+      const rasterDiv = document.querySelector('.raster');
+      rasterDiv.classList.add('active');
     });
 
-
-
-    document.querySelector('.raster').addEventListener('click', function () {
-        this.classList.add('active');
-        document.querySelector('.list').classList.remove('active');
-        results = '<ul class="grid-list">';
-        filteredEvents.forEach(event => {
-            results += `
+  document.querySelector('.raster').addEventListener('click', function () {
+    this.classList.add('active');
+    document.querySelector('.list').classList.remove('active');
+    results = '<ul class="grid-list">';
+    filteredEvents.forEach(event => {
+      results += `
               <li>
                   <a href="events/detail.html?day=${event.day}&slug=${event.slug}">
-                  <span class="hour">${event.day_of_week.substring(0, 2)} ${event.day} juli</span>
+                  <span class="hour-two">${event.day_of_week.substring(0, 2)} ${event.day} juli</span>
                   <div class="images-events">
                       <img src="${event.image ? event.image.full : ""}" alt="">
                   </div>
@@ -66,17 +63,17 @@ document.addEventListener('DOMContentLoaded', function () {
                   </a>
               </li>
               `;
-        });
-        results += '</ul>';
-        updateResults();
     });
+    results += '</ul>';
+    updateResults(results);
+  });
 
-    document.querySelector('.list').addEventListener('click', function () {
-        this.classList.add('active');
-        document.querySelector('.raster').classList.remove('active');
-        results = '<ul class="list-sort">';
-        filteredEvents.forEach(event => {
-            results += `
+  document.querySelector('.list').addEventListener('click', function () {
+    this.classList.add('active');
+    document.querySelector('.raster').classList.remove('active');
+    results = '<ul class="list-sort">';
+    filteredEvents.forEach(event => {
+      results += `
                         <li class="list-list">
                             <a href="events/detail.html?day=${event.day}&slug=${event.slug}" class="link-list">
                             <div class="container-date">
@@ -91,12 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
                             </a>
                         </li>
                         `;
-        });
-        results += '</ul>';
-        updateResults();
     });
+    results += '</ul>';
+    updateResults(results);
+  });
 
-    function updateResults() {
-        document.getElementById('results').innerHTML = results;
-    }
+  function updateResults(html) {
+    document.getElementById('results').innerHTML = html;
+  }
 });
+})();

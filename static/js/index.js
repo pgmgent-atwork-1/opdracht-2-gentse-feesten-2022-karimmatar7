@@ -1,3 +1,4 @@
+(() => {
 const NEWS_URL = 'https://www.pgm.gent/data/gentsefeesten/events.json';
 
 const $containerin = document.getElementById('containerin');
@@ -53,3 +54,4 @@ const updateNewsList = (data) => {
 }
 
 fetchNews();
+})();

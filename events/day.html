@@ -36,16 +36,16 @@
                 </div>
             </div>
             <ul class="list-second">
-                <li><a href="day.html?day=15">Vr<br> <span>15 juli</span></a></li>
-                <li><a href="day.html?day=16">Za<br> <span>16 juli</span></a></li>
-                <li><a href="day.html?day=17">Zo<br> <span>17 juli</span></a></li>
-                <li><a href="day.html?day=18">Ma<br> <span>18 juli</span></a></li>
-                <li><a href="day.html?day=19">Di<br> <span>19 juli</span></a></li>
-                <li><a href="day.html?day=20">Wo<br> <span>20 juli</span></a></li>
-                <li><a href="day.html?day=21">Do<br> <span>21 juli</span></a></li>
-                <li><a href="day.html?day=22">Vr<br> <span>22 juli</span></a></li>
-                <li><a href="day.html?day=23">Za<br> <span>23 juli</span></a></li>
-                <li><a href="day.html?day=24">Zo<br> <span>24 juli</span></a></li>
+                <li><a class="link-day" data-type="15" href="day.html?day=15">Vr<br> <span>15 juli</span></a></li>
+                <li><a class="link-day" data-type="16" href="day.html?day=16">Za<br> <span>16 juli</span></a></li>
+                <li><a class="link-day" data-type="17" href="day.html?day=17">Zo<br> <span>17 juli</span></a></li>
+                <li><a class="link-day" data-type="18" href="day.html?day=18">Ma<br> <span>18 juli</span></a></li>
+                <li><a class="link-day" data-type="19" href="day.html?day=19">Di<br> <span>19 juli</span></a></li>
+                <li><a class="link-day" data-type="20" href="day.html?day=20">Wo<br> <span>20 juli</span></a></li>
+                <li><a class="link-day" data-type="21" href="day.html?day=21">Do<br> <span>21 juli</span></a></li>
+                <li><a class="link-day" data-type="22" href="day.html?day=22">Vr<br> <span>22 juli</span></a></li>
+                <li><a class="link-day" data-type="23" href="day.html?day=23">Za<br> <span>23 juli</span></a></li>
+                <li><a class="link-day" data-type="24" href="day.html?day=24">Zo<br> <span>24 juli</span></a></li>
             </ul>
         </div>
         <div class="displayer" style="display: none;">
@@ -101,10 +101,28 @@
                     </form>
                 </div>
                 <div class="category" id="category"></div>
+                <form id="form" class="search-bar-day-first" method="GET" action="../search.html">
+                    <input placeholder="Doorzoek het programma" type="search" id="search" name="search">
+                    <button type="submit" class="magnifier-search-day-first" id="submit-button"><img
+                            src="../static/img/icons/search.svg" alt=""></button>
+                </form>
             </div>
         </div>
         <div class="catego" id="catego"></div>
         <div id="information-day"></div>
+        <div class="other">
+            <img src="../static/img/images/search-decoration-img.jpg" alt="">
+            <div class="red-other">
+                <h2>Andere activiteiten
+                </h2>
+                <p>Ben je op zoek naar een andere activiteit?</p>
+            </div>
+        </div>
+        <form id="form" class="search-bar-day" method="GET" action="../search.html">
+            <input placeholder="Doorzoek het programma" type="search" id="search" name="search">
+            <button type="submit" class="magnifier-search-day-first" id="submit-button"><img
+                    src="../static/img/icons/search.svg" alt=""></button>
+        </form>
     </main>
     <footer>
         <div class="container-footer">
@@ -147,7 +165,8 @@
             <div class="container-third">
                 <p>#GF22</p>
                 <div class="companies">
-                    <li><a href="avs.be"><img class="avs" src="../static/img/icons/partner-avs.svg" alt=""></a></li>
+                    <li><a href="https://www.avs.be"><img class="avs" src="../static/img/icons/partner-avs.svg"
+                                alt=""></a></li>
                     <li><a href="https://stad.gent/nl"><img class="stad" src="../static/img/icons/partner-stad-gent.svg"
                                 alt=""></a>
                     </li>
@@ -170,6 +189,7 @@
     </footer>
     <script src="../static/js/menu.js"></script>
     <script src="../static/js/day.js"></script>
+    <script src="../static/js/search.js"></script>
 </body>
 
 </html>

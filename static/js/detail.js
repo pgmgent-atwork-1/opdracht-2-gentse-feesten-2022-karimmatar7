@@ -1,25 +1,26 @@
-const params = new URLSearchParams(window.location.search);
-const day = params.get('day');
-const slug = params.get('slug');
+(() => {
+    const params = new URLSearchParams(window.location.search);
+    const day = params.get('day');
+    const slug = params.get('slug');
 
-const detail = 'https://www.pgm.gent/data/gentsefeesten/events.json';
+    const detail = 'https://www.pgm.gent/data/gentsefeesten/events.json';
 
 
-const fetchDetails = async () => {
-    const response = await fetch(detail, { method: 'GET', });
-    const data = await response.json();
-    return data;
-};
+    const fetchDetails = async () => {
+        const response = await fetch(detail, { method: 'GET', });
+        const data = await response.json();
+        return data;
+    };
 
-const renderDetails = async () => {
-    const data = await fetchDetails();
-    const dat = data.find((ev) => {
-        return ev.slug === slug && ev.day === day;
-    });
-    const $details = document.getElementById('details');
-    $details.innerHTML = `<div class="container-details">
+    const renderDetails = async () => {
+        const data = await fetchDetails();
+        const dat = data.find((ev) => {
+            return ev.slug === slug && ev.day === day;
+        });
+        const $details = document.getElementById('details');
+        $details.innerHTML = `<div class="container-details">
     <div class="container-left">
-    <a href="">overzicht ${dat.day_of_week} ${dat.day} juli</a>
+    <a href="day.html?day=${dat.day}">overzicht ${dat.day_of_week} ${dat.day} juli</a>
     <h1>${dat.title}</h1>
     <div class="container-locate"><div class="locate"><img src="../static/img/icons/marker.svg">${dat.location}</div> ${dat.start}u. ${dat.end}u.</div>
     <div class="organise"><p>Organisator:</p> ${dat.organizer}</div>
@@ -53,20 +54,20 @@ const renderDetails = async () => {
     </h1>
     </div>`;
 
-    const fetchDetailsloc = async () => {
-        const response = await fetch(detail, { method: 'GET', });
-        const data = await response.json();
-        return data;
-    };
+        const fetchDetailsloc = async () => {
+            const response = await fetch(detail, { method: 'GET', });
+            const data = await response.json();
+            return data;
+        };
 
-    const renderLoc = async () => {
-        const data = await fetchDetailsloc();
-        const dar = data.filter((even) => {
-            return even.day === dat.day && even.location === dat.location;
-        });
-        const $locationDet = document.getElementById('details-location');
-        $locationDet.innerHTML = dar.map((da) => {
-            return `<li><a href="detail.html?day=${da.day}&slug=${da.slug}"
+        const renderLoc = async () => {
+            const data = await fetchDetailsloc();
+            const dar = data.filter((even) => {
+                return even.day === dat.day && even.location === dat.location;
+            });
+            const $locationDet = document.getElementById('details-location');
+            $locationDet.innerHTML = dar.map((da) => {
+                return `<li><a href="detail.html?day=${da.day}&slug=${da.slug}"
             <span class="hour-cat">${da.day} juli</span>
             <div class="images-events">
             <img src="${da.image ? da.image.full : ""}" alt="">
@@ -79,25 +80,25 @@ const renderDetails = async () => {
             </div>
             </div></a></li>
             `;
-        }).join("")
-    }
+            }).join("")
+        }
 
-    renderLoc();
+        renderLoc();
 
-    const fetchOrg = async () => {
-        const response = await fetch(detail, { method: 'GET', });
-        const data = await response.json();
-        return data;
-    };
+        const fetchOrg = async () => {
+            const response = await fetch(detail, { method: 'GET', });
+            const data = await response.json();
+            return data;
+        };
 
-    const renderOrg = async () => {
-        const data = await fetchOrg();
-        const dav = data.filter((eve) => {
-            return eve.organizer === dat.organizer;
-        });
-        const $OrgDet = document.getElementById('details-organizer');
-        $OrgDet.innerHTML = dav.map((da) => {
-            return `<li class="list-list">
+        const renderOrg = async () => {
+            const data = await fetchOrg();
+            const dav = data.filter((eve) => {
+                return eve.organizer === dat.organizer;
+            });
+            const $OrgDet = document.getElementById('details-organizer');
+            $OrgDet.innerHTML = dav.map((da) => {
+                return `<li class="list-list">
             <a href="detail.html?day=${da.day}&slug=${da.slug}" class="link-list">
             <div class="container-date">
             <span class="hour-list">${da.day_of_week.substring(0, 2)} ${da.day} juli</span>
@@ -111,10 +112,13 @@ const renderDetails = async () => {
             </a>
         </li>
             `;
-        }).join("")
+            }).join("")
+        }
+        const $linkDay = document.querySelector(`.link-day[data-type="${day}"]`);
+        $linkDay.classList.add("link-day-active");
+        renderOrg();
     }
 
-    renderOrg();
-}
+    renderDetails();
 
-renderDetails();
+})();

@@ -181,7 +181,7 @@ body {
   height: 234px;
   top: 8rem;
   width: 24rem;
-  left: 0.12rem;
+  left: 1rem;
 }
 
 .containerin li {
@@ -209,7 +209,7 @@ body {
 }
 
 .before-first {
-  max-width: 1200px;
+  max-width: 1400px;
   background-image: url(../img/images/hero-desktop.jpg);
   height: 71rem;
   background-repeat: no-repeat;
@@ -221,9 +221,9 @@ body {
   padding: 1.5rem;
   color: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 100%);
-  position: relative;
-  left: 23rem;
-  top: -5rem;
+  position: absolute;
+  left: 18.7rem;
+  top: 159rem;
   transition: all ease 0.5s;
   text-decoration: none;
   font-size: 1.2rem;
@@ -246,7 +246,7 @@ body {
 .slicenews {
   display: flex;
   position: relative;
-  left: 23rem;
+  left: 14.4rem;
   top: -8rem;
   flex-wrap: wrap;
   width: 50rem;
@@ -432,9 +432,9 @@ body {
 
 .today {
   line-height: 1.5rem;
-  position: absolute;
-  left: 75rem;
-  top: 25rem;
+  display: flex;
+  justify-content: right;
+  margin-top: 16rem;
 }
 
 .today a {
@@ -515,7 +515,7 @@ body {
 .spot {
   background-color: hsl(0, 79%, 57%);
   font-family: 'Stolzl Display Bold';
-  width: 31rem;
+  width: 34rem;
   text-transform: capitalize;
   font-size: 2rem;
   padding: 1rem;
@@ -736,6 +736,9 @@ footer {}
 .spot a {
   color: hsl(0, 0%, 0%);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vid a {
@@ -854,7 +857,7 @@ footer {}
   /* margin-left: 1.5rem; */
 }
 
-.list-second a {
+.link-day {
   display: flex;
   flex-direction: column;
   background: hsl(0, 79%, 57%);
@@ -866,6 +869,12 @@ footer {}
   border: 1px solid;
   padding: 1rem;
   text-align: center;
+}
+
+.link-day-active {
+  margin-top: -1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .list-second span {
@@ -1018,6 +1027,7 @@ footer {}
   padding: 2rem;
   background: hsl(0, 0%, 0%);
   transition: all 0.5s ease;
+  position: relative;
 }
 
 .results a {
@@ -1512,3 +1522,184 @@ footer {}
   text-decoration: none;
   color: white;
 }
+
+.other {
+  display: flex;
+  justify-content: center;
+}
+
+.red-other {
+  background-color: #e83b3b;
+  padding: 2rem;
+  color: black;
+}
+
+.red-other h2 {
+  font-family: 'Stolzl Display Bold';
+  font-size: 2rem;
+  line-height: 34px;
+}
+
+.red-other p {
+  font-family: 'Stolzl';
+  line-height: 91px;
+}
+
+.search-bar-day {
+  border: 1px solid hsl(0, 0%, 100%);
+  width: 49.8rem;
+  display: flex;
+  margin: 0 auto;
+}
+
+.search-bar-day input {
+  width: 47rem;
+  border: none;
+  height: 4rem;
+  font-family: 'Stolzl Medium';
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.search-bar-day ::placeholder {
+  color: hsl(0deg 0% 0%);
+}
+
+.magnifier-search-day {
+  cursor: pointer;
+  background: white;
+  border: none;
+}
+
+.relate-arrow {
+  position: relative;
+  width: 75px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: white;
+  top: -1rem;
+  border: none;
+  transition: all ease 0.5s;
+}
+
+.relate-arrow:hover {
+  width: 115px;
+}
+
+.relate-arrow::before {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 5px;
+  background: white;
+  transform: rotate(-45deg);
+  right: -3.5px;
+  bottom: -7px;
+  content: "";
+  border-radius: 2px;
+}
+
+.relate-arrow::after {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 5px;
+  background: white;
+  transform: rotate(45deg);
+  right: -3.6px;
+  bottom: 7px;
+  content: "";
+  border-radius: 2px;
+}
+
+.relate-arrow-spot::before {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 5px;
+  background: white;
+  transform: rotate(-45deg);
+  right: -3.5px;
+  bottom: -7px;
+  content: "";
+  border-radius: 2px;
+}
+
+.relate-arrow-spot::after {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 5px;
+  background: white;
+  transform: rotate(45deg);
+  right: -3.6px;
+  bottom: 7px;
+  content: "";
+  border-radius: 2px;
+}
+
+.relate-arrow-spot {
+  position: relative;
+  width: 75px;
+  height: 5px;
+  transform: rotate(270deg);
+  border-radius: 2px;
+  background-color: white;
+  top: -1rem;
+  left: 62%;
+  right: 50%;
+  border: none;
+  transition: all ease 0.5s;
+}
+
+.search-bar-day-first {
+  border: 1px solid hsl(0, 0%, 100%);
+  width: 49.8rem;
+  display: flex;
+}
+
+.search-bar-day-first input {
+  width: 47rem;
+  border: none;
+  height: 4rem;
+  font-family: 'Stolzl Medium';
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: none;
+  color: white;
+}
+
+.search-bar-day-first ::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.magnifier-search-day-first {
+  cursor: pointer;
+  background: black;
+  border: none;
+}
+
+.magnifier-search-day-first img {
+  filter: invert(1);
+}
+
+.hour-two {
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: hsl(0, 0%, 0%);
+  position: relative;
+  top: 4rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.5rem;
+  left: 1rem;
+  text-decoration: none;
+}
+
+.layout {
+  max-width: 1550px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.layouttwo {}
